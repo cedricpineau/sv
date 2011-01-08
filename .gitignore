@@ -1,0 +1,12 @@
+# Ignore les libs, gérées via leiningen
+lib
+
+# Ignore les artifacts Eclipse
+bin
+.classpath
+.project
+.settings
+
+# Ignore les fichiers de sauvegarde
+*~
+ 
