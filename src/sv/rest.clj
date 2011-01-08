@@ -2,6 +2,6 @@
   (:use compojure.core)
   (:require [compojure.route :as route]))
 
-(defroutes example
-  (GET "/" [] "<h1>SV !</h1>")
+(defroutes sv
+  (route/files "/" {:root "web"})
   (route/not-found "Page not found"))
