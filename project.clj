@@ -5,6 +5,10 @@
   :main sv.main
   :resources-path "conf"
   
+  :target-dir "dist"
+  :jar-name "sv.jar"
+  :uberjar-name "sv-uber.jar"
+  
   :dependencies [[org.clojure/clojure "1.2.0"]
                  [org.clojure/clojure-contrib "1.2.0"]
                  [fleetdb "0.3.1"]

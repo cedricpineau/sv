@@ -2,6 +2,7 @@
 lib
 # Ignore les artefacts de compilation de leiningen
 classes
+dist
 
 # Ignore les artifacts Eclipse
 bin
