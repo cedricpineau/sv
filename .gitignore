@@ -1,5 +1,7 @@
 # Ignore les libs, gérées via leiningen
 lib
+# Ignore les artefacts de compilation de leiningen
+classes
 
 # Ignore les artifacts Eclipse
 bin
