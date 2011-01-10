@@ -28,7 +28,7 @@
 ; Configuration du service de mail
 (def mail-properties
   {:mail-smtp-host \"\",
-   :mail.smtp.port 25,
-   :mail.smtp.login \"\",
-   :mail.smtp.password \"\"})
+   :mail-smtp-port 25,
+   :mail-smtp-login \"\",
+   :mail-smtp-password \"\"})
 "))
