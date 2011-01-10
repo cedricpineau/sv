@@ -1,5 +1,9 @@
+# Ignore le fichier des configurations confidentielles
+conf/sv/conf_secret.clj
+
 # Ignore les libs, gérées via leiningen
 lib
+
 # Ignore les artefacts de compilation de leiningen
 classes
 dist

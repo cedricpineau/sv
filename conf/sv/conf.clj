@@ -1,6 +1,7 @@
-(ns sv.conf)
+(ns sv.conf
+  (:require (sv [conf-secret :as conf-secret])))
 
-; Définit le mode d'exécution : :dev ou :prod
+; Bascule du mode d'exécution "prod" ou non
 (defn prod? [] false)
 
 ; Chemin vers le fichier de données : la première entrée concerne la prod, la seconde filtre sur mon login, à vous définir la votre si besoin
@@ -10,3 +11,5 @@
     (= "sc" (System/getProperty "user.name")) "/tmp/sv-data.log"
     :else "c:/windows/temp/sv-data.log"))
 
+; Configuration du service de mail
+(def mail-properties conf-secret/mail-properties)

@@ -14,3 +14,21 @@
                  [fleetdb "0.3.1"]
                  [compojure "0.5.3"]
                  [ring/ring-jetty-adapter "0.3.1"]])
+
+
+; Création du fichier des configurations confidentielles s'il n'existe pas
+(import (java.io File))
+(def conf-secret-file (File. "conf/sv/conf_secret.clj"))
+(when-not (.exists conf-secret-file)
+  (println "Création du fichier des configurations confidentielles" (str conf-secret-file))
+  (spit 
+    conf-secret-file
+    "(ns sv.conf-secret ^{:doc \"Configurations confidentielles de sv, ignorées par Git.\"})
+
+; Configuration du service de mail
+(def mail-properties
+  {:mail-smtp-host \"\",
+   :mail.smtp.port 25,
+   :mail.smtp.login \"\",
+   :mail.smtp.password \"\"})
+"))
