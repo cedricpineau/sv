@@ -1,7 +1,11 @@
 (ns sv.main
-  (:gen-class)
-  (:use ring.adapter.jetty)
-  (:use sv.rest))
+  (:gen-class))
+
+(require '(sv [rest :as svrest]))
+(require '(ring.adapter [jetty :as rajetty]))
+
 
 (defn -main [& args]
-  (run-jetty sv {:port 8080}))
+  (rajetty/run-jetty svrest/sv {:port 8080}))
+
+(-main)

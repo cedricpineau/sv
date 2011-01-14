@@ -1,18 +1,17 @@
-(ns sv.rest)
+(ns sv.dev)
 
-(require '(sv [data :as data]))
 (require '(ring.adapter [jetty :as rajetty]))
 (require '(ring.util [response :as ruresponse]))
 (require '(ring.middleware [session :as rmsession]))
 (require '(compojure [core :as cjcore] [route :as cjroute]))
-
-
+ 
 (defn go-home []
   (ruresponse/redirect "/"))
 
 (defn login [session params]
   (print params)
-  (if (data/find-user-by-email (params "email"))
+  (if
+    (= "secret" (params "passwd"))
     (-> (ruresponse/file-response "./web/private/dashboard.html")
       (assoc-in [:session :name] (params :name)))
     (go-home)))
@@ -36,3 +35,20 @@
 
 (def sv
   (-> sv-routes rmsession/wrap-session))
+
+(defonce server (rajetty/run-jetty sv {:port 8080 :join? false}))
+
+;(.stop server)
+;(.start server)
+
+
+;(def app
+;   (-> my-routes
+;        with-session
+;        (wrap-file “public”)
+;        wrap-file-info))
+;
+;(run-jetty (var app) {:ssl? true :port 8080 :ssl-port 8443
+;                      :keystore "my.keystore"
+;                      :key-password "foobar"})
+
