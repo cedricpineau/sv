@@ -21,9 +21,6 @@
   (user-from-fleet (first (fleet/query datastore ["select", "users", {"where" ["=", "email", email]}]))))
 
 
-;
-;
-;
 
 (def datastore
   (if (conf/prod?)

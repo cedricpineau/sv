@@ -1,6 +1,6 @@
 (ns sv.rest)
 
-(require '(sv [data :as data]))
+(require '(sv [data :as data] [velocity :as velocity]))
 (require '(ring.adapter [jetty :as rajetty]))
 (require '(ring.util [response :as ruresponse]))
 (require '(ring.middleware [session :as rmsession]))
@@ -11,11 +11,12 @@
   (ruresponse/redirect "/"))
 
 (defn login [session params]
-  (print params)
-  (if (data/find-user-by-email (params "email"))
-    (-> (ruresponse/file-response "./web/private/dashboard.html")
-      (assoc-in [:session :name] (params :name)))
-    (go-home)))
+  (let [user (data/find-user-by-email (params "email"))]
+  (if (not (nil? user))
+    (velocity/render-template 
+      "./web/private/dashboard.vlt" 
+      (doto (velocity/make-context) (.put "user" (data/to-fleet user))))
+    (go-home))))
 
 (defn logout [session]
   (alter session assoc :name nil)

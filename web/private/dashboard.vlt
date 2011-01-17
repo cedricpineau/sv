@@ -3,6 +3,7 @@
      PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <title>SV - Straight to the source</title>
@@ -10,11 +11,11 @@
         <meta name="description" content="SV.com (http://www.sv.com) is a blablabla" />        
     </head>
 
-    <body>
+    <body>         
 
         <br /><br /><br />
         <h1><p style="text-align: center;">WWW.SV.COM</p></h1>
-        <h2><p style="text-align: center;">You're in M. !</p></h2>
+        <h2><p style="text-align: center;">     You're in M. $user.lname !</p></h2>
 
 
 	        <script type="text/javascript">

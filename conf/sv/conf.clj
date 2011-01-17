@@ -9,6 +9,7 @@
   (cond
     (prod?) "sv-data.log"
     (= "sc" (System/getProperty "user.name")) "/tmp/sv-data.log"
+    (= "jerome" (System/getProperty "user.name")) "/tmp/sv-data.log"
     :else "c:/windows/temp/sv-data.log"))
 
 ; Configuration du service de mail

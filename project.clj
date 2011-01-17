@@ -13,7 +13,8 @@
                  [org.clojure/clojure-contrib "1.2.0"]
                  [fleetdb "0.3.1"]
                  [compojure "0.5.3"]
-                 [ring/ring-jetty-adapter "0.3.1"]])
+                 [ring/ring-jetty-adapter "0.3.1"]
+                 [org.apache.velocity/velocity "1.7"]])
 
 
 ; Création du fichier des configurations confidentielles s'il n'existe pas
