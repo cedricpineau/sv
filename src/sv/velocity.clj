@@ -11,24 +11,11 @@
 (. Velocity init)
 
 
-(defn make-context-2 
-  "Create Velocity Context for change keyWord to String"
-  []
-  (let [context (new VelocityContext)]
-    (proxy [Context] []
-      (containsKey [key] (contains? context (keyword key)))
-	    (get [key] (context (keyword key)))
-	    (getKeys [] (keys context))
-	    (put [key value] (.put context key value))
-	    (remove [key] (.remove context key)))))
-
 (defn make-context
-  "Create Velocity Context for change keyWord to String"
+  "Create Velocity Context"
   []
   (let [context (new VelocityContext)]
     context))
-
-
 
 (defn render-template 
   "Process a Velocity template in the response"
