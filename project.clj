@@ -1,6 +1,6 @@
-(defproject sv "0.1.0"
-  :description "The functional SV"
-  :url "http://sv.com"
+(defproject sv "0.1.0-SNAPSHOT"
+  :description "Straw-Votes"
+  :url "http://www.straw-votes.com/"
 
   :main sv.main
   :resources-path "conf"
