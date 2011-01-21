@@ -7,3 +7,5 @@
 
 (defn -main [& args]
   (rajetty/run-jetty svrest/sv {:port 8080}))
+
+(-main)
