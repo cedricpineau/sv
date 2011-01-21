@@ -1,0 +1,29 @@
+1 - Récupérer les sources du projet via git : 'git clone git@adressGit.git'
+
+2 - Si déjà récupérer, la mis à jour des sources ce fera par (se mettre dans le repertoire sv) : 'git pull'
+
+3 - Récupérer lein :
+		* linux like : 
+			https://github.com/technomancy/leiningen/raw/stable/bin/lein
+			chmod +x lein
+			
+		* windows : 
+			1. Download the Windows distribution leiningen-1.4.2-win32.zip
+				https://github.com/downloads/technomancy/leiningen/leiningen-1.4.2-win32.zip
+			2. Unzip in a folder of choice. 
+			3. Include the "lein" directory in PATH.
+	
+	Pour plus d'info https://github.com/technomancy/leiningen#readme
+	
+4 - Installation / Package 
+		* Ce placer dans le repertoire de sv et taper
+			'lein deps'  -- Cela permet de télécharger automatiquemenet les libs utils au projet
+			'lein jar'   -- creer le jar
+			'lein help'  -- afficher l'aide et les autres fonctions
+		
+		* Pour créer l'application et la déployer en mode standalone :
+			- Dans le rep de de 'sv' :
+			- 'lein uberjar'  -- Crée un jar exécutable dans sv/dist
+			- 'java -jar sv-uber.jar' -- lance l'application en standalone
+			- Navigateur --> localhost:8080 pour tester
+	
